@@ -219,7 +219,13 @@ run_as_user "gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-dark'
 printf "${YELLOW}WhiteSur was installed, but for better results, download the User Themes gnome extension and use the tweak tool to change shell theme to WhiteSur as well.${NC}\n";
 sleep $delay_after_message;
 
+printf "${YELLOW}install caffine for Laptop ***purge it if not needed on desktop***${NC}\n";
+sleep $delay_after_message;
+apt install -y caffeine
 
+printf "${YELLOW}Install VLC player${NC}\n";
+sleep $delay_after_message;
+apt install -y vlc
 
 printf "${YELLOW}Install prerequisits for Gnome Shell Extentions${NC}\n";
 sleep $delay_after_message;
