@@ -1,0 +1,7 @@
+[Desktop Entry]
+Comment=Android Studio
+Terminal=false
+Name=Android Studio
+Exec=/usr/local/android-studio/bin/studio-with-chrome.sh
+Type=Application
+Icon=/usr/local/android-studio/bin/studio.png

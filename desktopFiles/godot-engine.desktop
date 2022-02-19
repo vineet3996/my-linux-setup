@@ -1,0 +1,7 @@
+[Desktop Entry]
+Comment=Game Engine
+Terminal=false
+Name=Godot Engine
+Exec="/usr/local/godot-engine/Godot_v3.4.2-stable_x11.64" %U
+Type=Application
+Icon=/usr/local/godot-engine/icon.png
