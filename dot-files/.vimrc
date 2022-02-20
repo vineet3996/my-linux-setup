@@ -4,13 +4,40 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
-" TODO: Load plugins here (pathogen or vundle)
+"########## plugin start ####################
+
+" TODO: Load plugins here Plug installed below
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
+
+" On-demand loading
+Plug 'preservim/nerdtree'
+Plug 'calviken/vim-gdscript3'
+Plug 'ervandew/supertab'
+" Initialize plugin system
+call plug#end()
+
+"##########plugin end
 
 " Turn on syntax highlighting
 syntax on
 
 " For plugins to load correctly
-filetype plugin indent on
+"filetype plugin indent on
 
 " TODO: Pick a leader key
  let mapleader = ","
@@ -18,6 +45,11 @@ filetype plugin indent on
 " Security
 set modelines=0
 
+" nerd tree plugin commands
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " Show file stats
 set ruler
@@ -48,6 +80,15 @@ runtime! macros/matchit.vim
 " Move up/down editor lines
 nnoremap j gj
 nnoremap k gk
+
+" Set new split position
+set splitbelow splitright
+
+" split resizing
+nnoremap <silent> <C-Right> :vertical resize -3<CR>
+nnoremap <silent> <C-Left> :vertical resize +3<CR>
+nnoremap <silent> <C-Up> : resize +3<CR>
+nnoremap <silent> <C-Down> :resize -3<CR>
 
 " Allow hidden buffers
 set hidden
