@@ -65,10 +65,12 @@ set encoding=utf-8
 set wrap
 set textwidth=200
 set formatoptions=tcqrn1
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+"set below option for tab to spaces
+"set expandtab 
+set noexpandtab
 set noshiftround
 
 " Cursor motion
