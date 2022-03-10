@@ -26,7 +26,7 @@ call plug#begin()
 
 " On-demand loading
 Plug 'preservim/nerdtree'
-Plug 'calviken/vim-gdscript3'
+Plug 'vineet3996/vim-gdscript3'
 Plug 'ervandew/supertab'
 " Initialize plugin system
 call plug#end()
