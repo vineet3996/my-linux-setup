@@ -242,6 +242,8 @@ run_as_user "git clone https://github.com/flutter/flutter.git -b stable /home/${
 
 # run_as_user "flatpak install webstorm -y";
 # run_as_user "flatpak install androidstudio -y";
+# run as_user "flatpak install flathub org.godotengine.Godot"
+run as_user "flatpak install flathub org.gnome.GTG"
 
 
 apt dist-upgrade -y;
