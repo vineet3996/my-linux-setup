@@ -202,6 +202,24 @@ printf "${YELLOW}Installing VSCode${NC}\n";
 sleep $delay_after_message;
 apt install code -y
 
+
+printf "${YELLOW}Install VLC player${NC}\n";
+sleep $delay_after_message;
+apt install -y vlc
+
+printf "${YELLOW}Install prerequisits for Gnome Shell Extentions${NC}\n";
+sleep $delay_after_message;
+apt install gnome-shell-extensions -y
+#apt install chrome-gnome-shell -y
+
+run as_user "flatpak install flathub org.gnome.GTG"
+
+#==================================OPTIONAL PACKAGES=====================================
+#========================================================================================
+printf "${YELLOW}Installing TLP for laptop (battery tool)${NC}\n";
+sleep $delay_after_message;
+apt install tlp -y
+
 #Install Alacritty
 #printf "${YELLOW}Installing Alacritty (terminal)${NC}\n";
 #sleep $delay_after_message;
@@ -223,14 +241,6 @@ printf "${YELLOW}install caffine for Laptop ***purge it if not needed on desktop
 sleep $delay_after_message;
 apt install -y caffeine
 
-printf "${YELLOW}Install VLC player${NC}\n";
-sleep $delay_after_message;
-apt install -y vlc
-
-printf "${YELLOW}Install prerequisits for Gnome Shell Extentions${NC}\n";
-sleep $delay_after_message;
-apt install gnome-shell-extensions -y
-#apt install chrome-gnome-shell -y
 
 #flutter, android studio in separate script 
 run_as_user "mkdir /home/${target_user}/flutter-stable";
@@ -243,7 +253,6 @@ run_as_user "git clone https://github.com/flutter/flutter.git -b stable /home/${
 # run_as_user "flatpak install webstorm -y";
 # run_as_user "flatpak install androidstudio -y";
 # run as_user "flatpak install flathub org.godotengine.Godot"
-run as_user "flatpak install flathub org.gnome.GTG"
 
 
 apt dist-upgrade -y;
