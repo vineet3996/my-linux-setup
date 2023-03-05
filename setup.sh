@@ -64,7 +64,7 @@ sleep $delay_after_message;
 apt install kitty -y
 run_as_user "mkdir -p ~/.config/kitty && cp kitty/*.conf ~/.config/kitty/";
 
-#set kitty as default browser
+#set kitty as default terminal
 update-alternatives --config x-terminal-emulator
 gsettings set org.gnome.desktop.default-applications.terminal exec kitty
 gsettings set org.gnome.desktop.default-applications.terminal exec-args ""
@@ -163,12 +163,12 @@ printf "${YELLOW}Installing gnome-tweak-tool${NC}\n";
 sleep $delay_after_message;
 apt install gnome-tweaks -y;
 
-#Docker
-#printf "${YELLOW}Installing Docker ${NC}\n";
-#sleep $delay_after_message;
-#apt install docker.io -y
-#systemctl enable --now docker
-#usermod -aG docker $target_user;
+# Docker
+printf "${YELLOW}Installing Docker ${NC}\n";
+sleep $delay_after_message;
+apt install docker.io -y
+systemctl enable --now docker
+usermod -aG docker $target_user;
 
 #Install Open-SSH Server
 printf "${YELLOW}Installing OpenSSH Server ${NC}\n";
@@ -216,9 +216,9 @@ run as_user "flatpak install flathub org.gnome.GTG"
 
 #==================================OPTIONAL PACKAGES=====================================
 #========================================================================================
-printf "${YELLOW}Installing TLP for laptop (battery tool)${NC}\n";
-sleep $delay_after_message;
-apt install tlp -y
+#printf "${YELLOW}Installing TLP for laptop (battery tool)${NC}\n";
+#sleep $delay_after_message;
+#apt install tlp -y
 
 #Install Alacritty
 #printf "${YELLOW}Installing Alacritty (terminal)${NC}\n";
@@ -227,19 +227,19 @@ apt install tlp -y
 #run_as_user "mkdir -p ~/.config/alacritty && cp alacritty.yml ~/.config/alacritty/";
 
 #Change Theme to WhiteSur Dark
-printf "${YELLOW}Installing WhiteSur-dark theme${NC}\n";
-sleep $delay_after_message;
-run_as_user "cp white-sur-wallpaper.png ~/Pictures";
-run_as_user "gsettings set org.gnome.desktop.background picture-uri file:////home/${target_user}/Pictures/white-sur-wallpaper.jpg";
-run_as_user "unzip WhiteSur-dark.zip -d /home/${target_user}/.themes/";
-run_as_user "unzip WhiteSur-icons-patched.zip -d /home/${target_user}/.icons/";
-run_as_user "gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-dark'";
-printf "${YELLOW}WhiteSur was installed, but for better results, download the User Themes gnome extension and use the tweak tool to change shell theme to WhiteSur as well.${NC}\n";
-sleep $delay_after_message;
+#printf "${YELLOW}Installing WhiteSur-dark theme${NC}\n";
+#sleep $delay_after_message;
+#run_as_user "cp white-sur-wallpaper.png ~/Pictures";
+#run_as_user "gsettings set org.gnome.desktop.background picture-uri file:////home/${target_user}/Pictures/white-sur-wallpaper.jpg";
+#run_as_user "unzip WhiteSur-dark.zip -d /home/${target_user}/.themes/";
+#run_as_user "unzip WhiteSur-icons-patched.zip -d /home/${target_user}/.icons/";
+#run_as_user "gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-dark'";
+#printf "${YELLOW}WhiteSur was installed, but for better results, download the User Themes gnome extension and use the tweak tool to change shell theme to WhiteSur as well.${NC}\n";
+#sleep $delay_after_message;
 
-printf "${YELLOW}install caffine for Laptop ***purge it if not needed on desktop***${NC}\n";
-sleep $delay_after_message;
-apt install -y caffeine
+#printf "${YELLOW}install caffine for Laptop ***purge it if not needed on desktop***${NC}\n";
+#sleep $delay_after_message;
+#apt install -y caffeine
 
 
 #flutter, android studio in separate script 

@@ -124,11 +124,33 @@ fi
 
 export JAVA_HOME=/usr/lib/jvm/jdk-17
 
-export CHROME_EXECUTABLE=/usr/bin/chromium-browser
+export CHROME_EXECUTABLE=~/.local/share/Linux_x64_1081728_chrome-linux/chrome-linux/chrome
 
 #Path for flutter
-export PATH="$PATH:/home/vt/flutter-stable/flutter/bin:/home/vt/Android/Sdk/platform-tools:/home/vt/.local/bin"
+export PATH="$PATH:/home/vt/flutter-stable/flutter/bin:/home/vt/Android/Sdk/platform-tools:/home/vt/.local/bin:/usr/bin/python"
 
 #Commands to mount old hard-disk on PC
 #. ~/mount_hard_disk.sh
 neofetch
+
+#activate vim on command line
+bindkey -v
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias eclim="exec /home/vt/eclipse/java-2021-09/eclipse/eclimd"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/vt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/vt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/vt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/vt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
