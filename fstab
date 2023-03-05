@@ -5,10 +5,6 @@
 # that works even if disks are added and removed. See fstab(5).
 #
 # <file system>  <mount point>  <type>  <options>  <dump>  <pass>
-PARTUUID=85746c84-ef5d-4428-a7b8-86b9a074e774  /boot/efi  vfat  umask=0077  0  0
-PARTUUID=ae082e60-4d70-415e-b83c-94b7e0fc5d10  /recovery  vfat  umask=0077  0  0
-UUID=509de769-7fee-48b6-8993-5127358637e9  /  ext4  noatime,errors=remount-ro  0  0
-/dev/mapper/cryptswap  none  swap  defaults  0  0
 
 #hard-disk
 /dev/sdb1	/media/vt/HD-Drive	ntfs-3g	rw,uid=1000,gid=1000,umask=0022,fmask=0022	0	0
